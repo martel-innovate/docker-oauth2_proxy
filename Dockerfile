@@ -1,8 +1,6 @@
-FROM golang
+FROM golang:alpine
 
-MAINTAINER Jodok Batlogg "jodok@crate.io"
-
-RUN git clone --branch v2.2 https://github.com/bitly/oauth2_proxy.git /go/src/app
+RUN git clone https://github.com/bitly/oauth2_proxy.git /go/src/app
 
 RUN go get -d -v github.com/bitly/oauth2_proxy
 RUN go install -v github.com/bitly/oauth2_proxy
