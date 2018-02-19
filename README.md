@@ -1,25 +1,31 @@
-## oauth2_proxy Dockerfile
+# oauth2_proxy Docker image
 
 
-This repository contains **Dockerfile** of [oauth2_proxy](https://github.com/bitly/oauth2_proxy/) for [Docker](https://www.docker.com/).
+This repository contains scripts to build a [Docker](https://www.docker.com/)
+image for for [oauth2_proxy](https://github.com/bitly/oauth2_proxy/) out of 
+the master branch.
 
 
-### Base Docker Image
+## Build the image
 
-* [golang](https://hub.docker.com/_/golang/)
+```bash
+sh build.sh 
+```
 
-
-### Installation
+## Installation
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [build](https://registry.hub.docker.com/u/crate/oauth2_proxy/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull crate/oauth2_proxy`
+1. Download [build](https://registry.hub.docker.com/u/crate/oauth2_proxy/)
+    from public [Docker Hub Registry](https://registry.hub.docker.com/):
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="crate/oauth2_proxy" github.com/crate/docker-oauth2_proxy`)
+      ```bash
+      docker pull martel/oauth2_proxy
+      ```
 
 
-### Usage
+## Usage
 
-    create a file <config-dir>/oauth2_proxy.cfg for configuration
-
-    docker run -d -p 4180:4180 -v <config-dir>:/conf crate/oauth2_proxy
+```bash
+docker run -d -p 4180:4180 martel/oauth2_proxy
+```
