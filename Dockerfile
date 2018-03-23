@@ -1,4 +1,2 @@
-FROM scratch
-ADD /app/oauth2_proxy /
+FROM quay.io/joelspeed/oauth2_proxy:kubernetes-1
 ADD /app/ca-certificates.crt /etc/ssl/certs/
-ENTRYPOINT ["/oauth2_proxy"]
